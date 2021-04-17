@@ -8,7 +8,6 @@ export class Page<T> {
   private totalRecords: number
 
   constructor(pageable: Pageable, records: T[], totalRecords: number) {
-    console.log(pageable.getLimit())
     this.records = records
     this.totalPages = this.toFixed(totalRecords / pageable.getLimit())
     this.currentPage = pageable.getPage()
