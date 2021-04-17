@@ -3,7 +3,6 @@ Object.defineProperty(exports, "__esModule", { value: true });
 exports.Page = void 0;
 var Page = /** @class */ (function () {
     function Page(pageable, records, totalRecords) {
-        console.log(pageable.getLimit());
         this.records = records;
         this.totalPages = this.toFixed(totalRecords / pageable.getLimit());
         this.currentPage = pageable.getPage();
