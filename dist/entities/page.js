@@ -3,9 +3,9 @@ Object.defineProperty(exports, "__esModule", { value: true });
 exports.Page = void 0;
 var Page = /** @class */ (function () {
     function Page(pageable, records, totalRecords) {
-        var totalPages = totalRecords / pageable.getLimit();
+        console.log(pageable.getLimit());
         this.records = records;
-        this.totalPages = this.toFixed(totalPages, 0);
+        this.totalPages = this.toFixed(totalRecords / pageable.getLimit());
         this.currentPage = pageable.getPage();
         this.itemsPerPage = records.length;
         this.totalRecords = totalRecords;
@@ -25,9 +25,13 @@ var Page = /** @class */ (function () {
     Page.prototype.getTotalRecords = function () {
         return this.totalRecords;
     };
-    Page.prototype.toFixed = function (number, fixed) {
-        var regex = new RegExp('^-?\\d+(?:.\\d{0,' + (fixed || -1) + '})?');
-        return Number(number.toString().match(regex));
+    Page.prototype.toFixed = function (number) {
+        var numberSplited = number.toString().split('.');
+        var result = Number(numberSplited[0]);
+        if (numberSplited[1]) {
+            result++;
+        }
+        return result;
     };
     return Page;
 }());
