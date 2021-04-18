@@ -1,6 +1,6 @@
 # Records Pagination
 A library based on Spring Data pagination
-## How to use
+## Usage
 You must install the dependency using the following command:
 ```sh
 npm install records-pagination
@@ -151,9 +151,5 @@ Now, if you call the pagination route by passing a **page** with the value **2**
   "totalRecords": 9
 }
 ```
-
-## [Project link on github]
-
 [NestJS]: <https://nestjs.com>
 [MongoDB]: <https://www.mongodb.com>
-[Project link on github]: <https://github.com/andrewronscki/records-pagination>
