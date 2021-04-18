@@ -12,13 +12,13 @@ yarn add records-pagination
 With the library installed you can use the classes **Pageable** and **Page**
 
 The **Pageable** class accepts two parameters
-- page [Number]
-- limit [Number]
+- page [**Number**]
+- limit [**Number**]
 
 The **Page** class accepts three parameters
-- pageable [Pageable]
-- records [T]
-- totalRecords [Number]
+- pageable [**Pageable**]
+- records [**T**]
+- totalRecords [**Number**]
 
 If you do not enter these parameters when instantiating the class, it will look for it's **default** values. For **page** it is **1** and for **limit** it is **10**
 
