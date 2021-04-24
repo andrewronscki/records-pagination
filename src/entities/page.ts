@@ -9,7 +9,7 @@ export class Page<T> {
 
   constructor(pageable: Pageable, records: T[], totalRecords: number) {
     this.records = records
-    this.totalPages = this.toFixed(totalRecords / pageable.getLimit())
+    this.totalPages = Math.ceil(totalRecords / pageable.getLimit())
     this.currentPage = pageable.getPage()
     this.itemsPerPage = records.length
     this.totalRecords = totalRecords
@@ -32,15 +32,5 @@ export class Page<T> {
 
   getTotalRecords(): number {
     return this.totalRecords
-  }
-
-  private toFixed(number: number): number {
-    const numberSplited = number.toString().split('.')
-    let result = Number(numberSplited[0])
-    if (numberSplited[1]) {
-      result++
-    }
-
-    return result
   }
 }
