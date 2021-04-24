@@ -4,7 +4,7 @@ exports.Page = void 0;
 var Page = /** @class */ (function () {
     function Page(pageable, records, totalRecords) {
         this.records = records;
-        this.totalPages = this.toFixed(totalRecords / pageable.getLimit());
+        this.totalPages = Math.ceil(totalRecords / pageable.getLimit());
         this.currentPage = pageable.getPage();
         this.itemsPerPage = records.length;
         this.totalRecords = totalRecords;
@@ -23,14 +23,6 @@ var Page = /** @class */ (function () {
     };
     Page.prototype.getTotalRecords = function () {
         return this.totalRecords;
-    };
-    Page.prototype.toFixed = function (number) {
-        var numberSplited = number.toString().split('.');
-        var result = Number(numberSplited[0]);
-        if (numberSplited[1]) {
-            result++;
-        }
-        return result;
     };
     return Page;
 }());

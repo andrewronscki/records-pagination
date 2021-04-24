@@ -11,5 +11,4 @@ export declare class Page<T> {
     getCurrentPage(): number;
     getItemsPerPage(): number;
     getTotalRecords(): number;
-    private toFixed;
 }
